@@ -4,3 +4,4 @@ node_modules/
 /playwright/.cache/
 Reports/
 playwright-report/data
+/screenshot.png
