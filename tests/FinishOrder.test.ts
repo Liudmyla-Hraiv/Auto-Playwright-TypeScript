@@ -1,76 +1,86 @@
-import {expect, test} from "@playwright/test";
-import LoginPage from "../Pages/LoginPage";
-import InventoryPage from "../Pages/InventoryPage";
-import CartPage from "../Pages/CartPage";
-import CheckoutFirst from "../Pages/Checkout-1-Page";
-import CheckoutSecond from "../Pages/Checkout-2-Page";
-import FinishPage from "../Pages/FinishPage";
+import {expect, test} from "../base/pomFixture";
+import * as data from "../test-data/Test-data.json"
 
-const user = "standard_user";
-const password = "secret_sauce";
-const BaseURL = "https://www.saucedemo.com";
-
-const first = "Sergio";
-const last = "Mario";
-const zip = "65045";
-
-const TITLE = "Swag Labs";
 const ThanksLoc = "h2[data-test='complete-header']";
 const CompleteLoc = ".title";
-const ThanksMsg = "Thank you for your order!";
-const CompleteMsg = "Checkout: Complete!";
+const TwitterLoc = "a[data-test='social-twitter']";
+const FacebookLoc = "a[data-test='social-facebook']";
+const LinkedinLoc = "a[data-test='social-linkedin']";
+const FooterLoc = "div.footer_copy";
+const BurgerMenu = "#react-burger-menu-btn";
 
-
-test("Finish Order", async ({page}) =>{
-    const log = new LoginPage(page);
-    const invent = new InventoryPage(page);
-    const cart = new CartPage(page);
-    const check1= new CheckoutFirst(page);
-    const check2= new CheckoutSecond(page);
-    const fin= new FinishPage(page);
+test("Finish Order", async ({page, loginPage, inventoryPage, cartPage,
+                        checkout1Page, checkout2Page, finishPage}) =>{
     //Login
-    await page.goto(BaseURL);
-    expect(await page.title()).toBe(TITLE);
-    await log.enterUserName(user);
-    await log.enterPassword(password);
-    await log.clickLoginBtn();
+    await page.goto(data.BaseURL);
+    expect(await page.title()).toBe(data.title);
+    await loginPage.enterUserName(data.userName);
+    await loginPage.enterPassword(data.password);
+    await loginPage.clickLoginBtn();
 
     //Add 3 items to the carts
-    expect(await page.title()).toBe(TITLE);
+    expect(await page.title()).toBe(data.title);
+    expect(await page.locator(BurgerMenu)).toBeEnabled();
+    expect(await page.locator(TwitterLoc)).toBeEnabled();
+    expect(await page.locator(FacebookLoc)).toBeEnabled();
+    expect(await page.locator(LinkedinLoc)).toBeEnabled();
+    expect(await page.locator(FooterLoc)).toBeEnabled();
+    expect (await page.locator(FooterLoc)).toHaveText(data.FooterText);
 
-    await invent.addFirstItem();
-    await invent.clickCartBtn();
-    await cart.clickShoppingBtn();
-    await invent.addSecondItem();
-    await invent.clickCartBtn();
-    await cart.clickShoppingBtn();
-    await invent.addThirdItem();
-    await invent.clickCartBtn();
+    await inventoryPage.addFirstItem();
+    await inventoryPage.clickCartBtn();
+    await cartPage.clickShoppingBtn();
+    await inventoryPage.addThirdItem();
+    await inventoryPage.clickCartBtn();
 
     //Start checkout 
-    expect(await page.title()).toBe(TITLE);
-    await cart.clickCheckoutBtn();
+    expect(await page.title()).toBe(data.title);
+    expect(await page.locator(BurgerMenu)).toBeEnabled();
+    expect(await page.locator(TwitterLoc)).toBeEnabled();
+    expect(await page.locator(FacebookLoc)).toBeEnabled();
+    expect(await page.locator(LinkedinLoc)).toBeEnabled();
+    expect(await page.locator(FooterLoc)).toBeEnabled();
+    expect (await page.locator(FooterLoc)).toHaveText(data.FooterText);
+    await cartPage.clickCheckoutBtn();
 
     //Fill first checkout page
-    expect(await page.title()).toBe(TITLE);
-    await check1.enterFirstName(first);
-    await check1.enterLastName(last);
-    await check1.enterZipCode(zip);
-    await check1.clickContinueBtn();
+    expect(await page.title()).toBe(data.title);
+    expect(await page.locator(BurgerMenu)).toBeEnabled();
+    expect(await page.locator(TwitterLoc)).toBeEnabled();
+    expect(await page.locator(FacebookLoc)).toBeEnabled();
+    expect(await page.locator(LinkedinLoc)).toBeEnabled();
+    expect(await page.locator(FooterLoc)).toBeEnabled();
+    expect (await page.locator(FooterLoc)).toHaveText(data.FooterText);
+    await checkout1Page.enterFirstName(data.firstName);
+    await checkout1Page.enterLastName(data.lastName);
+    await checkout1Page.enterZipCode(data.zip);
+    await checkout1Page.clickContinueBtn();
     //Fill second checkout page
-    expect(await page.title()).toBe(TITLE);
-    await check2.clickLFinishBtn();
-    await check2.page.screenshot();
+    expect(await page.title()).toBe(data.title);
+    expect(await page.locator(BurgerMenu)).toBeEnabled();
+    expect(await page.locator(TwitterLoc)).toBeEnabled();
+    expect(await page.locator(FacebookLoc)).toBeEnabled();
+    expect(await page.locator(LinkedinLoc)).toBeEnabled();
+    expect(await page.locator(FooterLoc)).toBeEnabled();
+    expect (await page.locator(FooterLoc)).toHaveText(data.FooterText);
+    await checkout2Page.clickLFinishBtn();
+    await checkout2Page.page.screenshot();
 
     //Finish order;
-    expect(await page.title()).toBe(TITLE);
+    expect(await page.title()).toBe(data.title);
+    expect(await page.locator(BurgerMenu)).toBeEnabled();
+    expect(await page.locator(TwitterLoc)).toBeEnabled();
+    expect(await page.locator(FacebookLoc)).toBeEnabled();
+    expect(await page.locator(LinkedinLoc)).toBeEnabled();
+    expect(await page.locator(FooterLoc)).toBeEnabled();
+    expect (await page.locator(FooterLoc)).toHaveText(data.FooterText);
     //Check present "Thanks Message"
-    expect (await page.locator(ThanksLoc)).toHaveText(ThanksMsg);
+    expect (await page.locator(ThanksLoc)).toHaveText(data.ThanksMsg);
     console.log(await page.textContent(ThanksLoc));
     // //Check present "Complete Message"
-    expect (await page.locator(CompleteLoc)).toHaveText(CompleteMsg);
+    expect (await page.locator(CompleteLoc)).toHaveText(data.CompleteMsg);
     console.log(await page.textContent(CompleteLoc));
-    
+    await page.screenshot({ path: 'screenshot.png', fullPage: true });
     //Back to Home Page
-    await fin.clickBackHomeBtn();
+    await finishPage.clickBackHomeBtn();
 })
