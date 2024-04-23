@@ -1,0 +1,35 @@
+{
+   "itemName1":"Sauce Labs Backpack",
+   "itemName2":"Sauce Labs Bike Light",
+   "itemName3" :"Sauce Labs Bolt T-Shirt",
+   "itemName4":"Sauce Labs Fleece Jacket",
+   "itemName5":"Sauce Labs Onesie",
+   "itemName6":"Test.allTheThings() T-Shirt (Red)",
+
+   "removeBtnLoc1":"#remove-sauce-labs-backpack",
+   "removeBtnLoc2":"#remove-sauce-labs-bike-light",
+   "removeBtnLoc3":"#remove-sauce-labs-bolt-t-shirt",
+   "removeBtnLoc4":"#remove-sauce-labs-fleece-jacket",
+   "removeBtnLoc5":"#remove-sauce-labs-onesie",
+   "removeBtnLoc6":"button[name='remove-test.allthethings()-t-shirt-(red)']",
+
+   "addBtnLoc1":"#add-to-cart-sauce-labs-backpack",
+   "addBtnLoc2": "#add-to-cart-sauce-labs-bike-light",
+   "addBtnLoc3": "#add-to-cart-sauce-labs-bolt-t-shirt",
+   "addBtnLoc4":"#add-to-cart-sauce-labs-fleece-jacket",
+   "addBtnLoc5":"#add-to-cart-sauce-labs-onesie",
+   "addBtnLoc6":"#add-to-cart-test.allthethings()-t-shirt-(red)",
+
+   "cartBtnLoc":"a.shopping_cart_link",
+   "backToProductsBtnLoc": "#back-to-products",
+   "addFromtDescrPageLoc":"#add-to-cart",
+   "removeFromDescrPageLoc":"#remove",
+   "cartBadgeLoc":".shopping_cart_badge",
+
+   "TitleLoc1":"//div[text()='Sauce Labs Bike Light']",
+   "TitleLoc2":"//div[text()='Sauce Labs Bike Light']",
+   "TitleLoc3":"//div[text()='Sauce Labs Bolt T-Shirt']",
+   "TitleLoc4":"//div[text()='Sauce Labs Fleece Jacket']",
+   "TitleLoc5":"//div[text()='Sauce Labs Onesie']",
+   "TitleLoc6":"//div[text()='Test.allTheThings() T-Shirt (Red)']"
+}

@@ -1,0 +1,12 @@
+{
+    
+    "userName": "standard_user",
+    "password": "secret_sauce",
+    "invalidUserName": "standard@&user",
+    "invalidPassword":"secret_sauce!123",
+    
+    "ErrorMsgLocator" : ".error-message-container",
+    "ErrorUser":"Epic sadface: Username is required",
+    "ErrorPassword":"Epic sadface: Password is required",
+    "ErrorUserAndPassword":"Epic sadface: Username and password do not match any user in this service"
+}

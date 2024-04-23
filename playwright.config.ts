@@ -16,7 +16,7 @@ const config: PlaywrightTestConfig = {
          }   
       }
    ],
-    testMatch: ["tests/FinishOrder.test.ts", "tests/Login.test.ts"],
+    testMatch: ["tests/FinishOrder.test.ts", "tests/Login.test.ts", "tests/AddItems.test.ts"],
      use: {
         headless: false,
         screenshot: "on",

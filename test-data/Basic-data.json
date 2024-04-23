@@ -1,0 +1,12 @@
+{
+    "BaseURL" :"https://www.saucedemo.com",
+
+    "TwitterLoc" : "a[data-test='social-twitter']",
+    "FacebookLoc" : "a[data-test='social-facebook']",
+    "LinkedinLoc" : "a[data-test='social-linkedin']",
+    "FooterTextLoc" : "div.footer_copy",
+    
+    "BurgerMenu" : "#react-burger-menu-btn", 
+    "title" :"Swag Labs",
+    "FooterText": "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+}

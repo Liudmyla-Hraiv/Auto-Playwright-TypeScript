@@ -1,0 +1,19 @@
+{
+    "removeBtnLoc1":"#remove-sauce-labs-backpack",
+    "removeBtnLoc2":"#remove-sauce-labs-bike-light",
+    "removeBtnLoc3":"#remove-sauce-labs-bolt-t-shirt",
+    "removeBtnLoc4":"#remove-sauce-labs-fleece-jacket",
+    "removeBtnLoc5":"#remove-sauce-labs-onesie",
+    "removeBtnLoc6":"button[name='remove-test.allthethings()-t-shirt-(red)']",
+
+    "CheckoutBtnLoc":"#checkout",
+    "ShoppingBtnLoc":"#continue-shopping",
+    "cartBadgeLoc":".shopping_cart_badge",
+
+    "TitleLoc1":"(//div[@data-test='inventory-item-name'])[1]",
+    "TitleLoc2":"(//div[@data-test='inventory-item-name'])[2]",
+    "TitleLoc3":"(//div[@data-test='inventory-item-name'])[3]",
+    "TitleLoc4":"(//div[@data-test='inventory-item-name'])[4]",
+    "TitleLoc5":"(//div[@data-test='inventory-item-name'])[5]",
+    "TitleLoc6":"(//div[@data-test='inventory-item-name'])[6]"
+}

@@ -1,0 +1,10 @@
+{
+    "firstName":"Sergio",
+    "lastName" :"Mario",
+    "zip" :"65045",
+    "ThanksMsg":"Thank you for your order!",
+    "StatusMsg" : "Checkout: Complete!", 
+    "ThanksTextLoc" : "h2[data-test='complete-header']",
+    "StatusTextLoc" : ".title"
+    
+}
