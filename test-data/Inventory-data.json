@@ -18,8 +18,8 @@
    "addBtnLoc3": "#add-to-cart-sauce-labs-bolt-t-shirt",
    "addBtnLoc4":"#add-to-cart-sauce-labs-fleece-jacket",
    "addBtnLoc5":"#add-to-cart-sauce-labs-onesie",
-   "addBtnLoc6":"#add-to-cart-test.allthethings()-t-shirt-(red)",
-
+   "addBtnLoc6":"//button[@data-test='add-to-cart-test.allthethings()-t-shirt-(red)']",
+   
    "cartBtnLoc":"a.shopping_cart_link",
    "backToProductsBtnLoc": "#back-to-products",
    "addFromtDescrPageLoc":"#add-to-cart",

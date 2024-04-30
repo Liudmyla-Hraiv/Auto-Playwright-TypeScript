@@ -5,6 +5,8 @@
     "ThanksMsg":"Thank you for your order!",
     "StatusMsg" : "Checkout: Complete!", 
     "ThanksTextLoc" : "h2[data-test='complete-header']",
-    "StatusTextLoc" : ".title"
-    
+    "StatusTextLoc" : ".title",
+    "itemTotalLoc": "//div[@data-test='subtotal-label']",
+    "TaxLoc": "//div[@data-test='tax-label']",
+    "totalLoc":"//div[@data-test='total-label']"
 }
