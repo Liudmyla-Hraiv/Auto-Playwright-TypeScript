@@ -12,7 +12,9 @@ test("Finish Order", async ({page, loginPage, inventoryPage, cartPage,
     expect(await page.title()).toBe(BasicData.title);
     await loginPage.enterUserName(LogData.userName);
     await loginPage.enterPassword(LogData.password);
+    await expect(page).toHaveScreenshot('FinishTest_1.png', {fullPage: true});
     await loginPage.clickLoginBtn();
+    
 
     //Add 2 items to the carts on Inventory Page
     expect(await page.title()).toBe(BasicData.title);
@@ -28,6 +30,7 @@ test("Finish Order", async ({page, loginPage, inventoryPage, cartPage,
     await cartPage.clickShoppingBtn();
     await inventoryPage.addItem_2_click();
     await inventoryPage.clickCartBtn();
+    await expect(page).toHaveScreenshot('FinishTest_2.png', {fullPage: true});
 
     //Start checkout 
     expect(await page.title()).toBe(BasicData.title);
@@ -51,6 +54,7 @@ test("Finish Order", async ({page, loginPage, inventoryPage, cartPage,
     await checkout1Page.enterFirstName(FinData.firstName);
     await checkout1Page.enterLastName(FinData.lastName);
     await checkout1Page.enterZipCode(FinData.zip);
+    await expect(page).toHaveScreenshot('FinishTest_3.png', {fullPage: true});
     await checkout1Page.clickContinueBtn();
     //Fill second checkout page
     expect(await page.title()).toBe(BasicData.title);
@@ -60,9 +64,8 @@ test("Finish Order", async ({page, loginPage, inventoryPage, cartPage,
     expect(await page.locator(BasicData.LinkedinLoc)).toBeEnabled();
     expect(await page.locator(BasicData.FooterTextLoc)).toBeEnabled();
     expect (await page.locator(BasicData.FooterTextLoc)).toHaveText(BasicData.FooterText);
-    
+    await expect(page).toHaveScreenshot('FinishTest_4.png', {fullPage: true});
     await checkout2Page.clickLFinishBtn();
-    await checkout2Page.page.screenshot();
 
     //Finish order;
     expect(await page.title()).toBe(BasicData.title);
@@ -78,7 +81,8 @@ test("Finish Order", async ({page, loginPage, inventoryPage, cartPage,
     // //Check present "Complete Message"
     expect (await page.locator(FinData.StatusTextLoc)).toHaveText(FinData.StatusMsg);
     console.log(await page.textContent(FinData.StatusTextLoc));
-    await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    await expect(page).toHaveScreenshot('FinishTest_5.png', {fullPage: true});
+    
     //Back to Home Page
     await finishPage.clickBackHomeBtn();
 })

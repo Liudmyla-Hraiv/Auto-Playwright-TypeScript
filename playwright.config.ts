@@ -10,7 +10,7 @@ const config: PlaywrightTestConfig = {
          
       },
       {
-         name: "fox", 
+         name: "firefox", 
          use:{
             ...devices["Desktop Firefox"]
          }   
