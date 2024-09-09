@@ -22,7 +22,7 @@ const config: PlaywrightTestConfig = {
         screenshot: "on",
         video: "retain-on-failure"
      },
-     retries:0,
+     retries:1,
      reporter: [["dot"], 
                 ["json", {outputFile:"Reports/reports.json"}],
                 ["html", {open:"on-failure"}] ]

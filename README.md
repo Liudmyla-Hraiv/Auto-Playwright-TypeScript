@@ -1,7 +1,7 @@
-with check header's&footer's components
-with check price velue
-whith check screenshots
-with Page Object Model
+Сheck header's && footer's components
+Сheck price velue
+Сheck screenshots
+Page Object Model
 For Chrome and Firefox
 
 For starting tests on the Bash use:
