@@ -13,8 +13,20 @@ type pages = {
     checkout1Page: CheckoutFirst;
     checkout2Page: CheckoutSecond;
     finishPage: FinishPage;
-}
+};
 const testPages = baseTest.extend<pages>({
+
+    context: async ({ browser }, use) => {
+        const context = await browser.newContext();
+        await use(context);
+        await context.close();
+    },
+    page: async ({ context }, use) => {
+        const page = await context.newPage();
+        await use(page);
+        await page.close();
+    },
+
     loginPage: async({page}, use) =>{
         await use (new LoginPage(page));
     },
@@ -33,6 +45,6 @@ const testPages = baseTest.extend<pages>({
     finishPage: async({page}, use) =>{
         await use (new FinishPage(page));
     },
-})
+});
 export const test = testPages;
 export const expect = testPages.expect;

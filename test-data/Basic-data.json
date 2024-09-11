@@ -7,6 +7,8 @@
     "FooterTextLoc" : "div.footer_copy",
     
     "BurgerMenu" : "#react-burger-menu-btn", 
-    "title" :"Swag Labs",
+    "Logo" :"Swag Labs",
+    "LogoLoc":".app_logo",
+    "LoginLogoLoc":".login_logo",
     "FooterText": "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
 }

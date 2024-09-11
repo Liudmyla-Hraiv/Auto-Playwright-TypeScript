@@ -22,8 +22,8 @@ test("2-Check login error w/o password", async ({page, loginPage}) => {
     await loginPage.enterPassword("");
     await loginPage.clickLoginBtn();
     //Check error message 
-    expect(await page.locator(LogData.ErrorMsgLocator)).toHaveText(LogData.ErrorPassword);
-    console.log(await page.textContent(LogData.ErrorMsgLocator));
+    await expect( page.locator(LogData.ErrorMsgLocator)).toHaveText(LogData.ErrorPassword);
+    console.log(page.textContent(LogData.ErrorMsgLocator));
    //check by screenshot
     await expect(page).toHaveScreenshot('LoginTest_2.png', {fullPage: true});
 }
@@ -36,8 +36,8 @@ test("3-Check login error w/o user-name", async ({page, loginPage}) => {
     await loginPage.enterPassword(LogData.password);
     await loginPage.clickLoginBtn();
     //Check error message 
-    expect(await page.locator(LogData.ErrorMsgLocator)).toHaveText(LogData.ErrorUser);
-    console.log(await page.textContent(LogData.ErrorMsgLocator));
+    await expect(page.locator(LogData.ErrorMsgLocator)).toHaveText(LogData.ErrorUser);
+    console.log(page.textContent(LogData.ErrorMsgLocator));
     //check by screenshot
     await expect(page).toHaveScreenshot('LoginTest_3.png', {fullPage: true});
 }
@@ -50,9 +50,9 @@ test("4-Login test with invalid user-name", async ({page, loginPage}) => {
     await loginPage.enterPassword(LogData.password);
     await loginPage.clickLoginBtn();
     //Check error message 
-    expect(await page.locator(LogData.ErrorMsgLocator))
+    await expect(page.locator(LogData.ErrorMsgLocator))
     .toHaveText(LogData.ErrorUserAndPassword);
-    console.log(await page.textContent(LogData.ErrorMsgLocator));
+    console.log(page.textContent(LogData.ErrorMsgLocator));
     //check by screenshot
     await expect(page).toHaveScreenshot('LoginTest_4.png', {fullPage: true});
 }
@@ -67,9 +67,8 @@ test("5-Login test with invalid password", async ({page, loginPage}) => {
     await loginPage.clickLoginBtn();
     //Check error message 
 
-    expect(await page.locator(LogData.ErrorMsgLocator))
-    .toHaveText(LogData.ErrorUserAndPassword);
-    console.log(await page.textContent(LogData.ErrorMsgLocator));
+    await expect(page.locator(LogData.ErrorMsgLocator)).toHaveText(LogData.ErrorUserAndPassword);
+    console.log(page.textContent(LogData.ErrorMsgLocator));
     //check by screenshot
     await expect(page).toHaveScreenshot('LoginTest_5.png', {fullPage: true});
 }
@@ -82,9 +81,8 @@ test("6-Login test with invalid data", async ({page, loginPage}) => {
     await loginPage.clickLoginBtn();
     //Check error message 
 
-    expect(await page.locator(LogData.ErrorMsgLocator))
-    .toHaveText(LogData.ErrorUserAndPassword);
-    console.log(await page.textContent(LogData.ErrorMsgLocator));
+    await expect(page.locator(LogData.ErrorMsgLocator)).toHaveText(LogData.ErrorUserAndPassword);
+    console.log(page.textContent(LogData.ErrorMsgLocator));
     //check by screenshot
     await expect(page).toHaveScreenshot('LoginTest_6.png', {fullPage: true});
 }
